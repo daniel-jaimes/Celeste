@@ -18,7 +18,7 @@ public class Controller {
         }
         return controller;
     }
-
+    
     public void init() {
         ArrayList<Player> players;
         String[][][] levels;
