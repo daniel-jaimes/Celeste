@@ -26,11 +26,10 @@ public class PlayersHandler extends DefaultHandler {
             throws SAXException{
         switch (qName){
             case "partida":
-                break;
-            case "partidas":
+                this.players.add(player);
                 break;
             case "puntuacion":
-                player.setScore(Integer.parseInt(this.value.toString()));
+                player.setScore(Integer.parseInt(this.value));
                 break;
             case "pantalla":
                 player.setScreen(Integer.parseInt(this.value.charAt(1) + ""));
@@ -41,18 +40,12 @@ public class PlayersHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName,
                              Attributes attributes) throws SAXException{
         switch (qName){
-            case "partidas":
-                break;
             case "partida":
                 String name = attributes.getValue("jugador");
                 player = new Player(name);
-                players.add(player);
-                break;
-            case "puntuacion":
-
                 break;
             case "pantalla":
-                player.setStateScreen(this.value.charAt(0));
+                player.setStateScreen(attributes.getValue("estado").charAt(0));
                 break;
         }
     }
