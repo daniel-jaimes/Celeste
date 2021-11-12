@@ -8,15 +8,15 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
 
-public class Reader {
+public class InputReader {
     private static PlayersHandler handler;
-    private Reader(){
+    private InputReader(){
 
     }
     public static PlayersHandler getInstance(){
         if(handler == null){
             try {
-                File file = new File("files/pantallas.txt");
+                File file = new File("files/entrada.xml");
                 SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
                 SAXParser saxParser = saxParserFactory.newSAXParser();
                 handler = new PlayersHandler();
