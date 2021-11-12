@@ -22,4 +22,13 @@ public class Player {
         this.stateScreen = Character.toUpperCase(stateScreen);
     }
 
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", score=" + score +
+                ", screen=" + screen +
+                ", stateScreen=" + stateScreen +
+                '}';
+    }
 }
