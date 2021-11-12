@@ -1,10 +1,9 @@
 package Manager;
 
 
-import Dao.Reader;
+import Dao.InputReader;
 import Model.Player;
 
-import java.io.FileReader;
 import java.util.ArrayList;
 
 public class Controller {
@@ -21,17 +20,29 @@ public class Controller {
     
     public void init() {
         ArrayList<Player> players;
-        String[][][] levels;
-        levels = readLevels();
+        //String[][][] levels;
+        //levels = readLevels();
+
+
         //TODO process txt file and save levels in memory
         //TODO process entrada.xml and save players in memory with SAX
         //TODO generating salida.xml with the information merge it of their levels and players for each they
 
+        players = readPlayers();
+        printPlayers(players);
     }
 
-    private String[][][] readLevels() {
-        FileReader fr = Reader.getInstance();
+    private void printPlayers(ArrayList<Player> players) {
+        players.forEach(p -> System.out.println(p.toString()));
+    }
+
+    private ArrayList<Player> readPlayers() {
+        return InputReader.getInstance().getPlayers();
+    }
+
+    private String[][][] readScreens() {
         String[][][] levels;
+
         return new String[0][][];
     }
 }
