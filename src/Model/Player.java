@@ -9,7 +9,24 @@ public class Player {
     public Player(String name){
         this.name = name;
     }
+    //GETTERS
+    public char getStateScreen() {
+        return stateScreen;
+    }
 
+    public int getScreen() {
+        return screen;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    //SETTERS
     public void setScore(int score) {
         this.score = score;
     }
