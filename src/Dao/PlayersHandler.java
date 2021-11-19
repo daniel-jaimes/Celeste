@@ -31,7 +31,7 @@ public class PlayersHandler extends DefaultHandler {
                 player.setScore(Integer.parseInt(this.value));
                 break;
             case "pantalla":
-                player.setScreen(Integer.parseInt(this.value.charAt(1) + ""));
+                player.setScreen(Integer.parseInt(String.valueOf(this.value.charAt(1))));
                 break;
         }
     }
