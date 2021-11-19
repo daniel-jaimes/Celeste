@@ -44,15 +44,15 @@ public class Controller {
         players.forEach(guy -> {
             Element score = document.createElement("puntuacion");
             Element display = document.createElement("pantalla");
-            screens.appendChild(display);
             int selectorScreen = 0;
+            screens.appendChild(display);
             if (guy.getStateScreen() != 'C') {
                 selectorScreen = 1;
             }
             display.setAttribute("jugador", guy.getName());
-            display.setAttribute("nivel",
-                    String.valueOf(guy.getScreen() - selectorScreen + 1));
-            Character[][] screen = levels.get(guy.getScreen() - selectorScreen);
+            display.setAttribute("nivel", String.valueOf(guy.getScreen() - selectorScreen));
+            selectorScreen = guy.getScreen() - selectorScreen - 1;
+            Character[][] screen = levels.get(selectorScreen);
             for (int i = 0; i < screen.length; i++) {
                 for (int j = 0; j < screen[i].length; j++) {
                     Element pixel = document.createElement("pixel");
