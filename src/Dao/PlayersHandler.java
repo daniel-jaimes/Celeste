@@ -19,7 +19,6 @@ public class PlayersHandler extends DefaultHandler {
     @Override
     public void characters(char[] ch, int start, int lenght) throws SAXException{
         this.value = new String(ch, start, lenght);
-
     }
     @Override
     public void endElement(String uri, String localName, String qName)
@@ -53,8 +52,5 @@ public class PlayersHandler extends DefaultHandler {
     @Override
     public void startDocument() throws SAXException {
         this.players = new ArrayList<>();
-    }
-
-    private void printDocument() {
     }
 }
