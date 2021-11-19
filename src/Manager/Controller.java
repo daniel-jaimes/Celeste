@@ -41,13 +41,13 @@ public class Controller {
     private ArrayList<Character[][]> readScreens() {
         ArrayList<Character[][]> screens;
         screens = new ArrayList<>();
-        String str;
+        String line;
         boolean endReader = false;
         ArrayList<Character[]> display = new ArrayList<>();
         try {
             BufferedReader BR = ScreenReader.getInstance();
-            while((str = BR.readLine()) != null && !endReader){
-                comands(str, endReader, display, screens);
+            while((line = BR.readLine()) != null && !endReader){
+                comands(line, endReader, display, screens);
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
